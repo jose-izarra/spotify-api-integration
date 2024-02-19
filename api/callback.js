@@ -7,9 +7,6 @@ const request = require('request');
 require('dotenv').config();
 
 
-
-
-
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 const redirect_uri = process.env.SPOTIFY_REDIRECT_URI;
@@ -62,6 +59,7 @@ callback.get('/', (req, res) => {
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
           console.log(body);
+          res.set('Content-Type', 'application/json');
           if (body) {
             res.status(200).json({ 
               name: body.item.name, 
