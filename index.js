@@ -10,16 +10,14 @@ const callback = require('./api/callback');
 const newToken = require('./api/newToken');
 
 
-const allowCrossDomain = (req, res, next) => {
-    res.header(`Access-Control-Allow-Origin`, `example.com`);
-    res.header(`Access-Control-Allow-Methods`, `GET`);
-    res.header(`Access-Control-Allow-Headers`, `Content-Type`);
-    next();
+const corsOptions = {
+    origin: ['http://localhost:3000', '*'],
+    optionsSuccessStatus: 200,
+    credentials: true
 }
 
 // app.use(allowCrossDomain);
-app.use(cors());
-app.options('*', cors());
+app.use(cors(corsOptions));
 app.use(bodyparser.json());
 
 
