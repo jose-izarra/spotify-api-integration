@@ -6,8 +6,8 @@ require('dotenv').config();
 
 
 const client_id = process.env.SPOTIFY_CLIENT_ID; 
-const redirect_uri = process.env.SPOTIFY_REDIRECT_URI;
-
+const redirect_uri = process.env.SPOTIFY_REDIRECT_URI; //
+console.log(redirect_uri);
 
 
 const generateRandomString = (length) => {
