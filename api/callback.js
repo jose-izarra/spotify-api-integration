@@ -2,9 +2,12 @@ const callback = require('express').Router();
 const querystring = require('querystring');
 const request = require('request');
 const bodyparser = require('body-parser');
+const cors = require('cors');
+
 
 callback.use(bodyparser.json());
-
+callback.use(cors());
+callback.options('*', cors());
 
 require('dotenv').config();
 
