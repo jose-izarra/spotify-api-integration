@@ -59,7 +59,7 @@ callback.get('/', (req, res) => {
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
           console.log(body);
-          res.set('Content-Type', 'application/json');
+          //res.set('Content-Type', 'application/json');
           if (body) {
             res.status(200).json({ 
               name: body.item.name, 
