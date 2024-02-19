@@ -14,7 +14,7 @@ app.use('/api/callback', callback);
 app.use('/api/newToken', newToken);
 
 app.get('/', (req, res) => {
-    res.send('Log in at /api/login');
+    res.send('<h1>Log in at /api/login</h1>');
 
 })
 
