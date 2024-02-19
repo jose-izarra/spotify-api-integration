@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const bodyparser = require('body-parser');
+
+
 
 const login = require('./api/login');
 const callback = require('./api/callback');
@@ -14,6 +17,8 @@ const newToken = require('./api/newToken');
 // }
 // app.use(cors(corsOptions));
 // app.use(express.json({ extended: false }));
+app.use(bodyparser.json());
+
 
 app.use('/api/login', login);
 app.use('/api/callback', callback);

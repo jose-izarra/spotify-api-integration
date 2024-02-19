@@ -1,7 +1,9 @@
 const callback = require('express').Router();
 const querystring = require('querystring');
 const request = require('request');
+const bodyparser = require('body-parser');
 
+callback.use(bodyparser.json());
 
 
 require('dotenv').config();
@@ -60,7 +62,9 @@ callback.get('/', (req, res) => {
         request.get(options, function(error, response, body) {
           console.log(body);
           //res.set('Content-Type', 'application/json');
-          res.set('Access-Control-Allow-Origin', '*')
+          // res.set('Access-Control-Allow-Origin', '*')
+          
+          
           if (body) {
             res.status(200).json({ 
               name: body.item.name, 
