@@ -60,6 +60,7 @@ callback.get('/', (req, res) => {
         request.get(options, function(error, response, body) {
           console.log(body);
           //res.set('Content-Type', 'application/json');
+          res.set('Access-Control-Allow-Origin', '*')
           if (body) {
             res.status(200).json({ 
               name: body.item.name, 
