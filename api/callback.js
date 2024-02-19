@@ -4,12 +4,19 @@ const request = require('request');
 const bodyparser = require('body-parser');
 const cors = require('cors');
 
+require('dotenv').config();
+
+const corsOptions = {
+  origin: ['http://localhost:3000', '*'],
+  optionsSuccessStatus: 200,
+  credentials: true
+}
+
+callback.use(cors(corsOptions));
 
 callback.use(bodyparser.json());
-callback.use(cors());
-callback.options('*', cors());
 
-require('dotenv').config();
+
 
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
