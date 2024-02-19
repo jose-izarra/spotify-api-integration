@@ -7,16 +7,12 @@ const callback = require('./api/callback');
 const newToken = require('./api/newToken');
 
 
-const corsOptions = {
-    origin: [
-        'http://localhost:3000',
-        'https://joseizarra.com/',
-        'https://joseizarra.com/projects',
-        'https://joseizarra.com/about',
-        'https://joseizarra.com/experience'
-],
-}
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: [
+//         'http://localhost:3000',
+// ],
+// }
+// app.use(cors(corsOptions));
 // app.use(express.json({ extended: false }));
 
 app.use('/api/login', login);
