@@ -2,17 +2,16 @@ const callback = require('express').Router();
 const querystring = require('querystring');
 const request = require('request');
 const bodyparser = require('body-parser');
-const cors = require('cors');
 
 require('dotenv').config();
 
-const corsOptions = {
-  origin: ['http://localhost:3000', '*'],
-  optionsSuccessStatus: 200,
-  credentials: true
-}
+// const corsOptions = {
+//   origin: ['http://localhost:3000', '*'],
+//   optionsSuccessStatus: 200,
+//   credentials: true
+// }
 
-callback.use(cors(corsOptions));
+// callback.use(cors(corsOptions));
 
 callback.use(bodyparser.json());
 

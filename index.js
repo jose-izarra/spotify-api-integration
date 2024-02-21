@@ -9,15 +9,15 @@ const login = require('./api/login');
 const callback = require('./api/callback');
 const newToken = require('./api/newToken');
 
-const cors = require('cors');
-const corsOptions = {
-    origin: ['http://localhost:3000', '*'],
-    optionsSuccessStatus: 200,
-    credentials: true
-}
+// const cors = require('cors');
+// const corsOptions = {
+//     origin: ['http://localhost:3000', '*'],
+//     optionsSuccessStatus: 200,
+//     credentials: true
+// }
 
-// app.use(allowCrossDomain);
-app.use(cors(corsOptions));
+// // app.use(allowCrossDomain);
+// app.use(cors(corsOptions));
 app.use(bodyparser.json());
 
 

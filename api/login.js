@@ -1,18 +1,17 @@
 const login = require('express').Router();
 const querystring = require('querystring');
-const cors = require('cors');
 
 require('dotenv').config();
 
 
 
-const corsOptions = {
-    origin: ['http://localhost:3000', '*'],
-    optionsSuccessStatus: 200,
-    credentials: true
-}
+// const corsOptions = {
+//     origin: ['http://localhost:3000', '*'],
+//     optionsSuccessStatus: 200,
+//     credentials: true
+// }
 
-login.use(cors(corsOptions));
+// login.use(cors(corsOptions));
 
 const client_id = process.env.SPOTIFY_CLIENT_ID; 
 const redirect_uri = process.env.SPOTIFY_REDIRECT_URI; //
