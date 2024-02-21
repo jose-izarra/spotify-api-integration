@@ -29,7 +29,7 @@ const generateRandomString = (length) => {
 const stateKey = 'spotify_auth_state';
 
 
-login.get("/", (req, res) => {
+login.post("/", (req, res) => {
     const state = generateRandomString(16);
 
     res.cookie(stateKey, state);
