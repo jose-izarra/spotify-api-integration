@@ -1,18 +1,16 @@
 const newToken = require('express').Router();
 const request = require('request');
-// const cors = require('cors');
+const cors = require('cors');
 
 require('dotenv').config();
 
 
-// const corsOptions = {
-//   origin: ['http://localhost:3000', '*'],
-//   optionsSuccessStatus: 200,
-//   credentials: true
-// }
+const corsOptions = {
+  origin: '*',
+}
 
 
-// newToken.use(cors(corsOptions));
+newToken.use(cors(corsOptions));
 
 const client_id = process.env.SPOTIFY_CLIENT_ID; 
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
